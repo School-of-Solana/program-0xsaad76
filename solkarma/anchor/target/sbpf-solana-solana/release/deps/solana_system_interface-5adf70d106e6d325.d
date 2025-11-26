@@ -1,0 +1,9 @@
+/home/saad/Desktop/learnings/ackee/program-0xsaad76/solkarma/anchor/target/sbpf-solana-solana/release/deps/libsolana_system_interface-5adf70d106e6d325.rmeta: /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/home/saad/Desktop/learnings/ackee/program-0xsaad76/solkarma/anchor/target/sbpf-solana-solana/release/deps/libsolana_system_interface-5adf70d106e6d325.rlib: /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/home/saad/Desktop/learnings/ackee/program-0xsaad76/solkarma/anchor/target/sbpf-solana-solana/release/deps/solana_system_interface-5adf70d106e6d325.d: /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs /home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs
+
+/home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/lib.rs:
+/home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/error.rs:
+/home/saad/.cargo/registry/src/index.crates.io-6f17d22bba15001f/solana-system-interface-1.0.0/src/instruction.rs:

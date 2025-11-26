@@ -1,0 +1,1 @@
+/home/saad/Desktop/learnings/ackee/program-0xsaad76/solkarma/anchor/target/sbpf-solana-solana/release/solkarma.so: /home/saad/Desktop/learnings/ackee/program-0xsaad76/solkarma/anchor/programs/solkarma/src/lib.rs
