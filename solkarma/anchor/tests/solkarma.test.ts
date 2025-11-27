@@ -11,14 +11,16 @@ import {
 // @ts-ignore error TS2307 suggest setting `moduleResolution` but this is already configured
 import { Solkarma } from '../target/types/solkarma'
 import bs58 from 'bs58'
+import { describe } from 'node:test'
 
 const { rpc, sendAndConfirmTransaction } = createSolanaClient({ urlOrMoniker: process.env.ANCHOR_PROVIDER_URL! })
+describe('init', () => {
   const program = anchor.workspace.ticketregistry as anchor.Program<Solkarma>
 
   let reviewer = anchor.web3.Keypair.fromSecretKey(
     bs58.decode('2bAoQLmhyKQxQqCgb4PPMz7J3nRCu817jhs1DBk8nHF6RNt1EdAzV7eGwSfUrQr923aDK7h9tn3Mq8Lv1U2sQmAN'),
   )
-  let target = anchor.web3.Keypair.generate()
+  let target = '7WKLAm3zkpvGFwew2AV7x5AY4URNBxhahufmniWPdgY6'
 
   beforeAll(async () => {
     let reqAirdrop = await program.provider.connection.requestAirdrop(reviewer.publicKey, 10 * LAMPORTS_PER_SOL)

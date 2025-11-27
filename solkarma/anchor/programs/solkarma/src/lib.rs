@@ -11,18 +11,36 @@ pub mod solkarma {
         Ok(())
     }
 
-    pub fn submit_review(ctx: Context<SubmitReview>, target: Pubkey, message: String, rating: u8) -> Result<()> {
-        msg!("Review Created Succesfuly !");
-        msg!("reviewer : {}", ctx.accounts.user.key());
-        msg!("Target : {}", target);
-        msg!("Rating : {}", rating);
-        msg!("Message : {}", &message);
+    pub fn submit_review(
+        ctx: Context<SubmitReview>,
+        target: Pubkey,
+        message: String,
+        rating: u8,
+    ) -> Result<()> {
+        require!(rating >= 1 && rating <= 10, SolkarmaError::InvalidRating);
+        require!(
+            target == ctx.accounts.target_account.key(),
+            SolkarmaError::TargetMismatch
+        );
+
+        msg!("Review Created Successfully!");
+        msg!("Reviewer: {}", ctx.accounts.user.key());
+        msg!("Target: {}", target);
+        msg!("Rating: {}", rating);
+        msg!("Message: {}", &message);
 
         let review_account = &mut ctx.accounts.review_account;
         review_account.reviewer = ctx.accounts.user.key();
         review_account.target = target;
         review_account.rating = rating;
         review_account.message = message;
+
+        let target_profile = &mut ctx.accounts.target_profile;
+        target_profile.review_count = target_profile.review_count.checked_add(1).unwrap();
+        target_profile.total_stars = target_profile
+            .total_stars
+            .checked_add(rating as u64)
+            .unwrap();
 
         Ok(())
     }
@@ -37,8 +55,7 @@ pub struct SubmitReview<'info> {
     #[account(mut)]
     pub user: Signer<'info>,
 
-    /// CHECK : safe because we only send money to it & we don't read its data.
-    #[account(mut)]
+    /// CHECK: Safe because we only use the key for seeds.
     pub target_account: UncheckedAccount<'info>,
 
     #[account(
@@ -75,4 +92,12 @@ pub struct ReviewAccount {
     rating: u8,
     #[max_len(200)]
     message: String,
+}
+
+#[error_code]
+pub enum SolkarmaError {
+    #[msg("Rating must be between 1 and 10.")]
+    InvalidRating,
+    #[msg("Target address does not match the target account.")]
+    TargetMismatch,
 }

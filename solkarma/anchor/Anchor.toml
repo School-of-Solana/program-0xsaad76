@@ -1,11 +1,14 @@
 [toolchain]
-package_manager = "yarn"
+package_manager = "pnpm"
 
 [features]
 resolution = true
 skip-lint = false
 
 [programs.localnet]
+solkarma = "AxLm6hUXXZMoemQaXEKWcdkcXKAKHk4iVcxLsoEWARDS"
+
+[programs.devnet]
 solkarma = "AxLm6hUXXZMoemQaXEKWcdkcXKAKHk4iVcxLsoEWARDS"
 
 [registry]
@@ -16,4 +19,4 @@ cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
-test = "vitest"
+test = "node_modules/.bin/jest --preset ts-jest"

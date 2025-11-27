@@ -47,11 +47,7 @@ export type Solkarma = {
           "signer": true
         },
         {
-          "name": "targetAccount",
-          "docs": [
-            "CHECK : safe because we only send money to it & we don't read its data."
-          ],
-          "writable": true
+          "name": "targetAccount"
         },
         {
           "name": "targetProfile",
@@ -151,6 +147,18 @@ export type Solkarma = {
         13,
         194
       ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "invalidRating",
+      "msg": "Rating must be between 1 and 10."
+    },
+    {
+      "code": 6001,
+      "name": "targetMismatch",
+      "msg": "Target address does not match the target account."
     }
   ],
   "types": [

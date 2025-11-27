@@ -41,11 +41,7 @@
           "signer": true
         },
         {
-          "name": "target_account",
-          "docs": [
-            "CHECK : safe because we only send money to it & we don't read its data."
-          ],
-          "writable": true
+          "name": "target_account"
         },
         {
           "name": "target_profile",
@@ -145,6 +141,18 @@
         13,
         194
       ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidRating",
+      "msg": "Rating must be between 1 and 10."
+    },
+    {
+      "code": 6001,
+      "name": "TargetMismatch",
+      "msg": "Target address does not match the target account."
     }
   ],
   "types": [
