@@ -1,6 +1,6 @@
 # Project Description
 
-**Deployed Frontend URL:** https://solkarmav2.vercel.app
+**Deployed Frontend URL:** https://solkarma.vercel.app
 
 **Solana Program ID:** AxLm6hUXXZMoemQaXEKWcdkcXKAKHk4iVcxLsoEWARDS
 
